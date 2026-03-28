@@ -1,1 +1,4 @@
-node_modules\ndist\n.astro\n*.png
+node_modules
+dist
+.astro
+*.png
