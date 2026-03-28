@@ -1,0 +1,604 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Maddrell Design | Custom Websites for Local Business">
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-200">
+  <div class="flex items-center justify-between px-4 py-3 max-w-[1200px] mx-auto">
+    <a href="/" class="font-cal text-[18px] font-bold text-dark">Maddrell</a>
+    <div class="flex items-center gap-2">
+      <a href="https://portfolio.maddrelldesign.com" target="_blank" class="hidden sm:block text-[13px] text-[#6b6b6b] hover:text-dark transition-colors px-2 py-1">Portfolio</a>
+      <a href="/book" class="cal-btn-dark chevron text-[13px] py-[7px] px-[14px]">Get started</a>
+      <button id="menu-btn" class="sm:hidden w-8 h-8 flex items-center justify-center" aria-label="Menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ MOBILE MENU ═══════════════ -->
+<div id="mobile-menu" class="fixed inset-0 z-[60] hidden">
+  <div class="absolute inset-0 bg-black/20" id="menu-backdrop"></div>
+  <div class="absolute top-0 right-0 w-[280px] h-full bg-white shadow-xl p-6 pt-16">
+    <button id="menu-close" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-[#f4f4f4]">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <div class="flex flex-col gap-1">
+      <a href="https://portfolio.maddrelldesign.com" target="_blank" class="px-3 py-2.5 rounded-lg text-[14px] text-[#6b6b6b] hover:bg-[#f4f4f4] transition-colors">Portfolio</a>
+      <a href="#how-it-works" class="px-3 py-2.5 rounded-lg text-[14px] text-[#6b6b6b] hover:bg-[#f4f4f4] transition-colors">How it works</a>
+      <a href="#benefits" class="px-3 py-2.5 rounded-lg text-[14px] text-[#6b6b6b] hover:bg-[#f4f4f4] transition-colors">Benefits</a>
+      <a href="#pricing" class="px-3 py-2.5 rounded-lg text-[14px] text-[#6b6b6b] hover:bg-[#f4f4f4] transition-colors">Pricing</a>
+      <a href="/book" class="px-3 py-2.5 rounded-lg text-[14px] text-[#6b6b6b] hover:bg-[#f4f4f4] transition-colors">Book a call</a>
+      <div class="border-t border-[#e8e8e8] my-2 pt-2">
+        <p class="px-3 py-1 text-[11px] font-semibold text-[#9a9a9a] uppercase tracking-wider">Demo Sites</p>
+        <a href="https://hartley.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] transition-colors block">Hartley Plumbing</a>
+        <a href="https://cafe.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] transition-colors block">Kin Grain Cafe</a>
+        <a href="https://fitness.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] transition-colors block">Apex Fitness</a>
+        <a href="https://beauty.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] transition-colors block">Luma Beauty</a>
+        <a href="https://accounting.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] transition-colors block">Whitfield Accounting</a>
+        <a href="https://events.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] transition-colors block">Evergreen Events</a>
+        <a href="https://saas.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] transition-colors block">Flowline SaaS</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ HERO SECTION ═══════════════ -->
+<!-- Cal.com hero: white card on #f4f4f4 background, left-aligned text, booking widget on right (mobile: stacked) -->
+<section id="hero" class="pt-14">
+  <div class="cal-card mx-3 sm:mx-4 md:mx-auto md:max-w-[1100px]">
+    <div class="px-5 pt-10 pb-6 sm:px-8 sm:pt-14 md:px-10 md:pt-16">
+      <!-- Version badge -->
+      <a href="#benefits" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#e8e8e8] bg-[#f8f8f8] text-[12px] text-[#6b6b6b] mb-5 hover:bg-[#f0f0f0] transition-colors">
+        Sydney's web design studio
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+      </a>
+
+      <!-- H1 — matches cal.com: 40px, weight 600, color #242424, left-aligned -->
+      <h1 class="font-cal text-[36px] sm:text-[40px] md:text-[52px] font-semibold leading-[1.1] tracking-normal text-[#242424] mb-5">
+        The better way to get your business online
+      </h1>
+
+      <!-- Subtext — cal.com: 15px, #6b6b6b -->
+      <p class="text-[14px] sm:text-[15px] leading-[1.6] text-[#6b6b6b] max-w-[380px] mb-6">
+        Custom-designed websites for local businesses. Hand-coded, mobile-first, and live in 10 days. No templates, no page builders.
+      </p>
+
+      <!-- CTA buttons — cal.com: full-width dark button + outlined email button -->
+      <div class="max-w-[320px] flex flex-col gap-2.5 mb-5">
+        <a href="/book" class="cal-btn-google">
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Book with Google Calendar
+        </a>
+        <a href="mailto:alistermaddrell@gmail.com" class="cal-btn-email">
+          Get in touch via email
+          <svg class="w-4 h-4 text-[#9a9a9a]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+        </a>
+      </div>
+
+      <p class="text-[12px] text-[#9a9a9a]">No credit card required</p>
+    </div>
+
+    <!-- Product mockup — booking card + calendar (cal.com style) -->
+    <div class="px-4 pb-6 sm:px-6 md:px-8">
+      <div class="rounded-xl border border-[#e8e8e8] bg-[#f8f8f8] p-3 sm:p-4">
+        <div class="rounded-lg border border-[#e8e8e8] bg-white overflow-hidden">
+          <!-- Booking card header -->
+          <div class="p-5 border-b border-[#f0f0f0]">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-9 h-9 rounded-full bg-[#f4f4f4] flex items-center justify-center text-[13px] font-semibold text-[#242424]">AM</div>
+              <div>
+                <p class="text-[12px] text-[#9a9a9a]">Alister Maddrell</p>
+                <p class="text-[15px] font-semibold text-[#242424]">Website Consultation</p>
+              </div>
+            </div>
+            <p class="text-[13px] text-[#6b6b6b] leading-relaxed">Free 15-minute call to discuss your business website needs, timeline, and budget.</p>
+            <div class="flex items-center gap-2 mt-3">
+              <span class="px-2.5 py-1 rounded-md bg-[#f4f4f4] text-[12px] font-medium text-[#242424] border border-[#e8e8e8]">15m</span>
+              <span class="px-2.5 py-1 rounded-md bg-[#f8f8f8] text-[12px] text-[#6b6b6b]">30m</span>
+              <span class="px-2.5 py-1 rounded-md bg-[#f8f8f8] text-[12px] text-[#6b6b6b]">45m</span>
+            </div>
+            <div class="flex items-center gap-4 mt-3 text-[12px] text-[#6b6b6b]">
+              <span class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+                Google Meet
+              </span>
+              <span class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                Australia/Sydney
+              </span>
+            </div>
+          </div>
+          <!-- Mini calendar -->
+          <div class="p-4">
+            <div class="flex items-center justify-between mb-3">
+              <p class="text-[13px] font-semibold text-[#242424]">March <span class="text-[#6b6b6b] font-normal">2026</span></p>
+            </div>
+            <div class="grid grid-cols-7 gap-1 text-center text-[11px] mb-2">
+              <span class="text-[#9a9a9a] font-medium py-1">SUN</span>
+              <span class="text-[#242424] font-medium py-1">MON</span>
+              <span class="text-[#242424] font-medium py-1">TUE</span>
+              <span class="text-[#242424] font-medium py-1">WED</span>
+              <span class="text-[#242424] font-medium py-1">THU</span>
+              <span class="text-[#242424] font-medium py-1">FRI</span>
+              <span class="text-[#9a9a9a] font-medium py-1">SAT</span>
+            </div>
+            <div class="grid grid-cols-7 gap-1 text-center text-[12px]">
+              <!-- Week 1 -->
+              <span class="py-1.5 text-[#d0d0d0]">1</span>
+              <span class="py-1.5">2</span>
+              <span class="py-1.5">3</span>
+              <span class="py-1.5">4</span>
+              <span class="py-1.5">5</span>
+              <span class="py-1.5">6</span>
+              <span class="py-1.5 text-[#d0d0d0]">7</span>
+              <!-- Week 2 -->
+              <span class="py-1.5 text-[#d0d0d0]">8</span>
+              <span class="py-1.5">9</span>
+              <span class="py-1.5">10</span>
+              <span class="py-1.5">11</span>
+              <span class="py-1.5">12</span>
+              <span class="py-1.5">13</span>
+              <span class="py-1.5 text-[#d0d0d0]">14</span>
+              <!-- Week 3 -->
+              <span class="py-1.5 text-[#d0d0d0]">15</span>
+              <span class="py-1.5">16</span>
+              <span class="py-1.5">17</span>
+              <span class="py-1.5">18</span>
+              <span class="py-1.5">19</span>
+              <span class="py-1.5">20</span>
+              <span class="py-1.5 text-[#d0d0d0]">21</span>
+              <!-- Week 4 -->
+              <span class="py-1.5 text-[#d0d0d0]">22</span>
+              <span class="py-1.5">23</span>
+              <span class="py-1.5">24</span>
+              <span class="py-1.5">25</span>
+              <span class="py-1.5">26</span>
+              <span class="py-1.5 rounded-lg bg-[#242424] text-white font-medium">27</span>
+              <span class="py-1.5 text-[#d0d0d0]">28</span>
+              <!-- Week 5 -->
+              <span class="py-1.5 text-[#d0d0d0]">29</span>
+              <span class="py-1.5">30</span>
+              <span class="py-1.5">31</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review badges row (cal.com has Trustpilot, ProductHunt, Google) -->
+    <div class="flex items-center justify-center gap-6 sm:gap-8 px-5 pb-6 border-t border-[#f0f0f0] pt-5">
+      <div class="flex flex-col items-center gap-1">
+        <div class="flex gap-0.5">
+          {[1,2,3,4,5].map(() => <svg class="w-3.5 h-3.5 text-[#f59e0b]" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>)}
+        </div>
+        <span class="text-[10px] text-[#9a9a9a]">Hand-coded</span>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="flex gap-0.5">
+          {[1,2,3,4,5].map(() => <svg class="w-3.5 h-3.5 text-[#f59e0b]" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>)}
+        </div>
+        <span class="text-[10px] text-[#9a9a9a]">10-day delivery</span>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="flex gap-0.5">
+          {[1,2,3,4,5].map((_, i) => <svg class={`w-3.5 h-3.5 ${i < 4 ? 'text-[#f59e0b]' : 'text-[#e8e8e8]'}`} viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>)}
+        </div>
+        <span class="text-[10px] text-[#9a9a9a]">Under 2s load</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TRUSTED BY ═══════════════ -->
+<div class="py-10 px-5">
+  <p class="text-center text-[12px] text-[#9a9a9a] mb-5">Built for local businesses across Sydney</p>
+  <div class="flex items-center justify-center gap-8 sm:gap-12 opacity-30 grayscale">
+    <span class="text-[17px] font-bold text-[#242424]">Hartley</span>
+    <span class="text-[17px] font-bold text-[#242424]" style="font-family: serif">Kin Grain</span>
+    <span class="text-[17px] font-bold text-[#242424]">Apex</span>
+    <span class="text-[17px] font-bold text-[#242424] hidden sm:block" style="font-family: serif">Luma</span>
+  </div>
+</div>
+
+<!-- ═══════════════ HOW IT WORKS ═══════════════ -->
+<section id="how-it-works" class="px-4 sm:px-6 pb-6">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="mb-8">
+      <div class="cal-pill">
+        <span class="text-[14px]">🔗</span>
+        How it works
+      </div>
+      <h2 class="font-cal text-[28px] sm:text-[32px] font-semibold leading-[1.1] text-[#242424] mb-3">
+        With us, getting online is easy
+      </h2>
+      <p class="text-[14px] sm:text-[15px] leading-[1.6] text-[#6b6b6b] max-w-[400px]">
+        Effortless website creation for businesses and individuals, powerful solutions for fast-growing modern companies.
+      </p>
+      <div class="flex items-center gap-3 mt-5">
+        <a href="/book" class="cal-btn-dark chevron">Get started</a>
+        <a href="/book" class="cal-btn-outline chevron">Book a demo</a>
+      </div>
+    </div>
+
+    <!-- Step cards — cal.com numbered card pattern -->
+    <div class="flex flex-col gap-4">
+      <!-- Step 01 -->
+      <div class="cal-card p-5 sm:p-6">
+        <div class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-[#f4f4f4] text-[12px] font-bold text-[#242424] mb-3">01</div>
+        <h3 class="text-[17px] font-semibold text-[#242424] mb-1.5" style="letter-spacing: -0.2px">Tell me about your business</h3>
+        <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Quick form with the basics — your business name, services, and what you want from your website. I handle the rest.</p>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="cal-card p-5 sm:p-6">
+        <div class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-[#f4f4f4] text-[12px] font-bold text-[#242424] mb-3">02</div>
+        <h3 class="text-[17px] font-semibold text-[#242424] mb-1.5" style="letter-spacing: -0.2px">I design your layout</h3>
+        <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">You approve a wireframe before any code is written. Nothing moves without your OK.</p>
+        <!-- Mini UI mockup -->
+        <div class="mt-4 p-3 rounded-lg border border-[#f0f0f0] bg-[#f8f8f8]">
+          <div class="flex gap-2">
+            <div class="flex-1 h-3 rounded bg-[#e8e8e8]"></div>
+            <div class="w-12 h-3 rounded bg-[#e8e8e8]"></div>
+          </div>
+          <div class="mt-2 h-20 rounded bg-[#e8e8e8]"></div>
+          <div class="mt-2 grid grid-cols-3 gap-2">
+            <div class="h-8 rounded bg-[#e8e8e8]"></div>
+            <div class="h-8 rounded bg-[#e8e8e8]"></div>
+            <div class="h-8 rounded bg-[#e8e8e8]"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="cal-card p-5 sm:p-6">
+        <div class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-[#f4f4f4] text-[12px] font-bold text-[#242424] mb-3">03</div>
+        <h3 class="text-[17px] font-semibold text-[#242424] mb-1.5" style="letter-spacing: -0.2px">I build it</h3>
+        <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Live preview link within days. Check it on your phone. Show your partner. Make sure it feels right.</p>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="cal-card p-5 sm:p-6">
+        <div class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-[#f4f4f4] text-[12px] font-bold text-[#242424] mb-3">04</div>
+        <h3 class="text-[17px] font-semibold text-[#242424] mb-1.5" style="letter-spacing: -0.2px">You're live</h3>
+        <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Domain connected, site launched, SEO foundations in place. Customers start finding you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BENEFITS / FEATURES ═══════════════ -->
+<section id="benefits" class="px-4 sm:px-6 py-10 sm:py-14">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="mb-8">
+      <div class="cal-pill">
+        <span class="text-[14px]">🏆</span>
+        Benefits
+      </div>
+      <h2 class="font-cal text-[28px] sm:text-[32px] font-semibold leading-[1.1] text-[#242424] mb-3">
+        Your all-purpose website package
+      </h2>
+      <p class="text-[14px] sm:text-[15px] leading-[1.6] text-[#6b6b6b] max-w-[400px]">
+        Discover everything that's included. One price, no hidden fees, no monthly surprises.
+      </p>
+      <div class="flex items-center gap-3 mt-5">
+        <a href="/book" class="cal-btn-dark chevron">Get started</a>
+        <a href="/book" class="cal-btn-outline chevron">Book a demo</a>
+      </div>
+    </div>
+
+    <!-- Feature cards — cal.com benefit card style with description text -->
+    <div class="flex flex-col gap-3">
+      <div class="cal-card p-5">
+        <h3 class="text-[16px] font-semibold text-[#242424] mb-1">Mobile-first design</h3>
+        <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Every site is designed for phones first, then scales up beautifully to tablet and desktop. Because that's where your customers are.</p>
+      </div>
+      <div class="cal-card p-5">
+        <h3 class="text-[16px] font-semibold text-[#242424] mb-1">Under 2-second load times</h3>
+        <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Hand-coded, no bloat, optimised images. Your site loads fast so customers don't leave before it finishes.</p>
+      </div>
+      <div class="cal-card p-5">
+        <h3 class="text-[16px] font-semibold text-[#242424] mb-1">SEO foundations for Google</h3>
+        <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Proper meta tags, structured data, semantic HTML, sitemap. So people in your area actually find you when they search.</p>
+      </div>
+      <div class="cal-card p-5">
+        <h3 class="text-[16px] font-semibold text-[#242424] mb-1">Bookings & contact forms</h3>
+        <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Enquiries and appointments come in while you sleep. Integrated booking or contact forms built right in.</p>
+      </div>
+      <div class="cal-card p-5">
+        <h3 class="text-[16px] font-semibold text-[#242424] mb-1">You own everything</h3>
+        <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Your code, your domain, your data. No lock-in contracts, no vendor dependency. Leave whenever you want.</p>
+      </div>
+      <div class="cal-card p-5">
+        <h3 class="text-[16px] font-semibold text-[#242424] mb-1">Simple CMS for easy updates</h3>
+        <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Change text, swap images, update your hours — all without touching code or calling me.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ "...AND SO MUCH MORE!" GRID ═══════════════ -->
+<section class="px-4 sm:px-6 pb-10">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <h2 class="font-cal text-[28px] sm:text-[32px] font-semibold text-[#242424] mb-6">...and so much more!</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+      {[
+        { icon: "💳", label: "Stripe payments" },
+        { icon: "📹", label: "Video integration" },
+        { icon: "🔗", label: "Custom domains" },
+        { icon: "🔒", label: "SSL security" },
+        { icon: "🌏", label: "CDN hosting" },
+        { icon: "📱", label: "PWA ready" },
+        { icon: "⚡", label: "Edge delivery" },
+        { icon: "🎨", label: "Custom design" },
+      ].map(item => (
+        <div class="cal-card p-4 flex flex-col items-center gap-2 text-center">
+          <div class="w-10 h-10 rounded-xl bg-[#f4f4f4] flex items-center justify-center text-[18px]">{item.icon}</div>
+          <span class="text-[13px] font-medium text-[#242424]">{item.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ RECENT WORK / PORTFOLIO ═══════════════ -->
+<section id="work" class="px-4 sm:px-6 py-10 sm:py-14">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="mb-8">
+      <div class="cal-pill">
+        <span class="text-[14px]">🖥️</span>
+        Recent work
+      </div>
+      <h2 class="font-cal text-[28px] sm:text-[32px] font-semibold leading-[1.1] text-[#242424] mb-3">
+        Built this week, not last year
+      </h2>
+      <p class="text-[14px] sm:text-[15px] leading-[1.6] text-[#6b6b6b] max-w-[400px]">
+        No templates. No page builders. Every site designed and hand-coded from scratch.
+      </p>
+    </div>
+
+    <!-- Portfolio cards -->
+    <div class="flex flex-col gap-4">
+      {[
+        { name: "Hartley & Co", type: "Plumbing", url: "hartleyplumbing.com.au", img: "/thumbnails/hartley.webp" },
+        { name: "Kin Grain", type: "Cafe", url: "kingraincafe.com.au", img: "/thumbnails/cafe.webp" },
+        { name: "Apex Fitness", type: "Gym", url: "apexfitness.com.au", img: "/thumbnails/fitness.webp" },
+      ].map(p => (
+        <div class="cal-card group">
+          <div class="flex items-center gap-2 px-4 py-2.5 border-b border-[#f0f0f0]">
+            <div class="flex gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-[#d0d0d0]"></span>
+              <span class="w-2 h-2 rounded-full bg-[#d0d0d0]"></span>
+              <span class="w-2 h-2 rounded-full bg-[#d0d0d0]"></span>
+            </div>
+            <div class="flex-1 mx-2">
+              <div class="bg-[#f4f4f4] rounded px-3 py-0.5 text-[11px] text-[#9a9a9a] text-center">{p.url}</div>
+            </div>
+          </div>
+          <div class="aspect-[16/9] overflow-hidden bg-[#f4f4f4]">
+            <img src={p.img} alt={p.name} loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-[1.01] transition-transform duration-500" />
+          </div>
+          <div class="flex items-center justify-between px-4 py-3 border-t border-[#f0f0f0]">
+            <div>
+              <span class="text-[14px] font-semibold text-[#242424]">{p.name}</span>
+              <span class="text-[12px] text-[#9a9a9a] ml-2">{p.type}</span>
+            </div>
+            <svg class="w-4 h-4 text-[#d0d0d0] group-hover:text-[#242424] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-6 text-center">
+      <a href="https://portfolio.maddrelldesign.com" target="_blank" class="cal-btn-outline chevron">View all projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<section id="pricing" class="px-4 sm:px-6 py-10 sm:py-14">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="mb-8">
+      <div class="cal-pill">
+        <span class="text-[14px]">💰</span>
+        Pricing
+      </div>
+      <h2 class="font-cal text-[28px] sm:text-[32px] font-semibold leading-[1.1] text-[#242424] mb-3">
+        One price. Everything included.
+      </h2>
+      <p class="text-[14px] sm:text-[15px] leading-[1.6] text-[#6b6b6b] max-w-[400px]">
+        No hidden fees. No monthly surprises. One price for a complete, professional website.
+      </p>
+    </div>
+
+    <div class="cal-card max-w-[400px]">
+      <div class="p-6 sm:p-8">
+        <p class="font-cal text-[48px] font-semibold text-[#242424] leading-none mb-1">$1,999</p>
+        <p class="text-[14px] text-[#6b6b6b] mb-6">Everything you need to get online</p>
+
+        <a href="/api/create-checkout" class="cal-btn-full mb-3">
+          Get started — $999 deposit
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+        </a>
+        <p class="text-[12px] text-[#9a9a9a] text-center mb-6">Remaining $1,000 due on launch</p>
+
+        <div class="border-t border-[#f0f0f0] pt-5">
+          <ul class="flex flex-col gap-3">
+            {[
+              "Designed from scratch — not a template",
+              "Mobile-first responsive design",
+              "Under 2 second load times",
+              "Booking or contact form built in",
+              "SEO foundations for Google",
+              "Simple CMS for easy updates",
+              "2 revision rounds included",
+              "3 months hosting + support",
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-[13px] text-[#6b6b6b]">
+                <svg class="w-4 h-4 text-[#22c55e] flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-5 px-6 py-4 border-t border-[#f0f0f0] bg-[#fafafa]">
+        <span class="flex items-center gap-1.5 text-[11px] text-[#9a9a9a]">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+          Secure via Stripe
+        </span>
+        <span class="flex items-center gap-1.5 text-[11px] text-[#9a9a9a]">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          No lock-in
+        </span>
+      </div>
+    </div>
+
+    <p class="mt-5 text-[13px] text-[#6b6b6b]">
+      Need something more complex? <a href="/book" class="font-semibold text-[#242424] underline underline-offset-2">Let's talk.</a>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section id="faq" class="px-4 sm:px-6 py-10 sm:py-14">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="mb-8">
+      <div class="cal-pill">
+        <span class="text-[14px]">❓</span>
+        FAQ
+      </div>
+      <h2 class="font-cal text-[28px] sm:text-[32px] font-semibold leading-[1.1] text-[#242424]">
+        Questions? Answers.
+      </h2>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      {[
+        { q: "How long until my site is live?", a: "Most sites launch within 10 business days of receiving your content." },
+        { q: "I don't have photos or copy. Is that a problem?", a: "Not at all. I can source photography and write your content as an add-on. Or just send what you have and I'll work with it." },
+        { q: "Do I need to know anything technical?", a: "Zero. You tell me about your business. I do the rest." },
+        { q: "Can I edit the site myself after launch?", a: "Yes. Every site comes with a simple editor. Change text, swap images. No coding, no calling me." },
+        { q: "What happens after launch?", a: "3 months of hosting and support is included. After that, ongoing support is available monthly." },
+        { q: "What if I don't love the design?", a: "You approve the layout before I write a line of code. Then two rounds of revisions to get every detail right." },
+      ].map(faq => (
+        <details class="cal-card group">
+          <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-[14px] font-medium text-[#242424] select-none list-none [&::-webkit-details-marker]:hidden">
+            <span class="pr-4">{faq.q}</span>
+            <svg class="w-4 h-4 text-[#9a9a9a] flex-shrink-0 transition-transform duration-200 group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+          </summary>
+          <div class="px-5 pb-4 -mt-1">
+            <p class="text-[13px] leading-[1.6] text-[#6b6b6b]">{faq.a}</p>
+          </div>
+        </details>
+      ))}
+      <details class="cal-card group">
+        <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-[14px] font-medium text-[#242424] select-none list-none [&::-webkit-details-marker]:hidden">
+          <span class="pr-4">I've got questions but I'm not ready to pay.</span>
+          <svg class="w-4 h-4 text-[#9a9a9a] flex-shrink-0 transition-transform duration-200 group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        </summary>
+        <div class="px-5 pb-4 -mt-1">
+          <p class="text-[13px] leading-[1.6] text-[#6b6b6b]">No worries. <a href="/book" class="font-semibold text-[#242424] underline underline-offset-2">Book a free 15-min call</a>. Zero pressure, zero obligation.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRE-FOOTER CTA ═══════════════ -->
+<section class="px-4 sm:px-6 pb-10">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="cal-card p-8 sm:p-10 text-center">
+      <h2 class="font-cal text-[28px] sm:text-[36px] font-semibold text-[#242424] leading-tight mb-3">
+        Ready to get online?
+      </h2>
+      <p class="text-[14px] text-[#6b6b6b] mb-6 max-w-sm mx-auto">
+        Stop losing customers to a bad website. $1,999 all-in. Live in 10 days.
+      </p>
+      <div class="flex items-center justify-center gap-3">
+        <a href="/book" class="cal-btn-dark chevron">Get started</a>
+        <a href="/book" class="cal-btn-outline chevron">Book a call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="px-4 sm:px-6 pt-10 pb-8">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="flex flex-col sm:flex-row gap-8 sm:gap-16 mb-8">
+      <div class="flex-1">
+        <h3 class="font-cal text-[18px] font-bold text-[#242424] mb-1">Maddrell Design</h3>
+        <p class="text-[13px] text-[#9a9a9a]">Custom websites for local businesses in Sydney.</p>
+      </div>
+      <div class="flex gap-12">
+        <div>
+          <p class="text-[11px] font-semibold text-[#9a9a9a] uppercase tracking-wider mb-3">Quick links</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="https://portfolio.maddrelldesign.com" target="_blank" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">Portfolio</a></li>
+            <li><a href="#pricing" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">Pricing</a></li>
+            <li><a href="#faq" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">FAQ</a></li>
+            <li><a href="/book" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">Book a call</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[11px] font-semibold text-[#9a9a9a] uppercase tracking-wider mb-3">Contact</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="mailto:alistermaddrell@gmail.com" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">alistermaddrell@gmail.com</a></li>
+            <li><span class="text-[13px] text-[#9a9a9a]">Sydney, Australia</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-[#e8e8e8] pt-5">
+      <p class="text-[12px] text-[#9a9a9a]">&copy; 2026 Maddrell Design</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════ STICKY CTA (mobile) ═══════════════ -->
+<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 translate-y-full transition-transform duration-300 md:hidden">
+  <div class="bg-white/95 backdrop-blur-xl border-t border-[#e8e8e8] px-4 py-3" style="padding-bottom: max(0.75rem, env(safe-area-inset-bottom))">
+    <a href="/book" class="cal-btn-full">
+      Book a free call
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+    </a>
+  </div>
+</div>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav?.classList.add('bg-white/90', 'backdrop-blur-lg', 'border-b', 'border-[#e8e8e8]/60');
+    } else {
+      nav?.classList.remove('bg-white/90', 'backdrop-blur-lg', 'border-b', 'border-[#e8e8e8]/60');
+    }
+  }, { passive: true });
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menu-btn');
+  const menuClose = document.getElementById('menu-close');
+  const menuBackdrop = document.getElementById('menu-backdrop');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const toggleMenu = () => mobileMenu?.classList.toggle('hidden');
+  menuBtn?.addEventListener('click', toggleMenu);
+  menuClose?.addEventListener('click', toggleMenu);
+  menuBackdrop?.addEventListener('click', toggleMenu);
+  mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu?.classList.add('hidden')));
+
+  // Sticky CTA
+  const stickyCta = document.getElementById('sticky-cta');
+  const hero = document.getElementById('hero');
+  if (stickyCta && hero) {
+    new IntersectionObserver(([e]) => {
+      stickyCta.classList.toggle('translate-y-full', e.isIntersecting);
+      stickyCta.classList.toggle('translate-y-0', !e.isIntersecting);
+    }).observe(hero);
+  }
+</script>
+
+</Layout>
