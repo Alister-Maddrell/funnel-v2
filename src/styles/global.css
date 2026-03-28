@@ -4,23 +4,14 @@
   --color-page: #f4f4f4;
   --color-white: #ffffff;
   --color-dark: #242424;
-  --color-dark-hover: #1a1a1a;
   --color-text: #242424;
   --color-text-secondary: #6b6b6b;
   --color-text-muted: #9a9a9a;
   --color-border: #e8e8e8;
   --color-border-light: #f0f0f0;
-  --color-card: #ffffff;
-  --color-card-hover: #fafafa;
 
   --font-cal: "Cal Sans", "Inter", system-ui, sans-serif;
   --font-inter: "Inter", system-ui, -apple-system, sans-serif;
-
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --radius-full: 9999px;
 }
 
 html {
@@ -38,40 +29,68 @@ body {
   padding: 0;
 }
 
-/* Cal.com uses their own "Cal Sans" display font */
 .font-cal {
   font-family: var(--font-cal);
 }
 
-/* Exact cal.com button: dark filled with chevron */
+/* ═══════════ CROSSHAIR GRID BACKGROUND (cal.com signature) ═══════════ */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  position: relative;
+}
+.grid-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle 2px at center, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.08) 50%, transparent 50%);
+  background-size: 80px 80px;
+  background-position: -1px -1px;
+  pointer-events: none;
+  z-index: 0;
+}
+.grid-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════ CAL.COM EXACT BUTTON STYLES ═══════════ */
+/* Dark button: gradient #292929 → #242424, white inset shadow for depth */
 .cal-btn-dark {
   display: inline-flex;
   align-items: center;
   gap: 4px;
   padding: 10px 18px;
-  border-radius: var(--radius-sm);
-  background: var(--color-dark);
+  border-radius: 12px;
+  background: linear-gradient(rgb(41,41,41), rgb(36,36,36));
+  box-shadow: inset 0 2px 0 0 rgba(255,255,255,0.15);
   color: white;
   font-size: 14px;
   font-weight: 500;
   line-height: 1;
-  transition: background 0.15s;
+  transition: all 0.15s;
   white-space: nowrap;
   text-decoration: none;
+  border: none;
 }
 .cal-btn-dark:hover {
-  background: var(--color-dark-hover);
+  background: linear-gradient(rgb(50,50,50), rgb(45,45,45));
+  box-shadow: inset 0 2px 0 0 rgba(255,255,255,0.2), 0 4px 12px rgba(0,0,0,0.12);
 }
 
-/* Cal.com outlined button */
+/* Secondary/outline button: gradient #fcfcfc → #fff, white inset shadow */
 .cal-btn-outline {
   display: inline-flex;
   align-items: center;
   gap: 4px;
   padding: 10px 18px;
-  border-radius: var(--radius-sm);
+  border-radius: 12px;
+  background: linear-gradient(rgb(252,252,252), rgb(255,255,255));
+  box-shadow: inset 0 2px 0 0 rgba(255,255,255,1), 0 1px 3px rgba(0,0,0,0.06);
   border: 1px solid var(--color-border);
-  background: var(--color-white);
   color: var(--color-text);
   font-size: 14px;
   font-weight: 500;
@@ -81,95 +100,56 @@ body {
   text-decoration: none;
 }
 .cal-btn-outline:hover {
+  box-shadow: inset 0 2px 0 0 rgba(255,255,255,1), 0 4px 12px rgba(0,0,0,0.08);
   border-color: #ccc;
-  background: var(--color-card-hover);
 }
 
-/* Full-width accent button (for signup etc) */
+/* Full-width dark CTA */
 .cal-btn-full {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 14px 20px;
-  border-radius: var(--radius-sm);
-  background: var(--color-dark);
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
-  transition: background 0.15s;
-  text-decoration: none;
-}
-.cal-btn-full:hover {
-  background: var(--color-dark-hover);
-}
-
-/* Google-style signup button */
-.cal-btn-google {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 14px 20px;
-  border-radius: var(--radius-sm);
-  background: var(--color-dark);
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
-  transition: background 0.15s;
-  text-decoration: none;
-}
-.cal-btn-google:hover {
-  background: var(--color-dark-hover);
-}
-
-/* White outline signup button */
-.cal-btn-email {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   width: 100%;
   padding: 14px 20px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-  background: var(--color-white);
+  border-radius: 12px;
+  background: linear-gradient(rgb(41,41,41), rgb(36,36,36));
+  box-shadow: inset 0 2px 0 0 rgba(255,255,255,0.15);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+  text-decoration: none;
+  border: none;
+}
+.cal-btn-full:hover {
+  background: linear-gradient(rgb(50,50,50), rgb(45,45,45));
+  box-shadow: inset 0 2px 0 0 rgba(255,255,255,0.2), 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* Full-width secondary */
+.cal-btn-full-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: linear-gradient(rgb(247,247,248), rgb(234,234,235));
+  box-shadow: inset 0 2px 0 0 rgba(255,255,255,1);
   color: var(--color-text);
   font-size: 14px;
   font-weight: 500;
   transition: all 0.15s;
   text-decoration: none;
+  border: none;
 }
-.cal-btn-email:hover {
-  border-color: #ccc;
-}
-
-/* Section badge/pill */
-.cal-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--color-border);
-  background: var(--color-white);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  margin-bottom: 16px;
+.cal-btn-full-outline:hover {
+  box-shadow: inset 0 2px 0 0 rgba(255,255,255,1), 0 4px 12px rgba(0,0,0,0.06);
 }
 
-/* White card containers */
-.cal-card {
-  background: var(--color-card);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  overflow: hidden;
-}
-
-/* Chevron icon */
+/* Chevron icon for buttons */
 .chevron::after {
   content: '';
   display: inline-block;
@@ -179,4 +159,55 @@ body {
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z'/%3E%3C/svg%3E") no-repeat center;
   mask-size: contain;
   flex-shrink: 0;
+}
+
+/* ═══════════ SECTION PILL BADGE ═══════════ */
+/* Cal.com uses white bg, border-radius 9999px, shadow: rgba(34,42,53,0.05) 0 4px 8px */
+.cal-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px 4px 8px;
+  border-radius: 9999px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(34,42,53,0.05);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+/* ═══════════ WHITE CARDS ═══════════ */
+.cal-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  overflow: hidden;
+}
+.cal-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+/* Icon container — cal.com style nested rounded square */
+.cal-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* Scroll-triggered fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
